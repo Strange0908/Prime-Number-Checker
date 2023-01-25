@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+    <link rel="stylesheet" href="d12.css">
+    <script src="/jquery-3.6.3.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#BTN").click(function(){
+                alert("Processing....")
+            var d = parseInt($("#t1").val())
+                
+            if(isNaN(d)){
+                $("#sp").text("Empty Field Not Allowed")
+                }else
+                {
+                    var i,c=0;
+                    for(i=1;i<=d;i++)
+                    {
+                        if(d%i==0)
+                        {
+                            c=c+1;
+                        }
+                    }
+                    if(c==2)
+                    {
+                        $("#sp").text("Number is Prime")
+                    }
+                    else
+                    {
+                        $("#sp").text("Number is Even")
+                    }
+                }
+            })   
+        })
+    </script>
+</head>
+<body>
+    <h1>Prime Number</h1>
+    <hr>
+    <p>Number Box: <input type="text" id="t1" placeholder="Type a Number...."></p>
+    <input type="button" value="Prime Check" id="BTN" class="btn">
+    <p>Output: <span id="sp"></span></p>
+    
+</body>
+</html>
